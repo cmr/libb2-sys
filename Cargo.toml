@@ -1,0 +1,16 @@
+[package]
+
+name = "libb2-sys"
+version = "0.0.1"
+authors = ["Corey Richardson <corey@octayn.net>"]
+description = "FFI bindings to libb2."
+#documentation = "https://cmr.github.io/libb2-sys/"
+repository = "https://github.com/cmr/libb2-sys"
+readme = "README.md"
+keywords = ["Blake2", "Crypto", "Hash"]
+license = "CC0-1.0"
+build = "build.rs"
+links = "b2"
+
+[dependencies]
+libc = "*"
