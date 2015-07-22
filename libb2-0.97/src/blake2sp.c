@@ -201,7 +201,7 @@ int blake2sp( uint8_t *out, const void *in, const void *key, size_t outlen, size
 
   if ( NULL == out ) return -1;
 
-  if ( NULL == key && key > 0 ) return -1;
+  if ( NULL == key && keylen > 0 ) return -1;
 
   if( !outlen || outlen > BLAKE2S_OUTBYTES ) return -1;
 
