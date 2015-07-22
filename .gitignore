@@ -1,2 +1,14 @@
 target
 Cargo.lock
+
+/libb2-*/**/*.la
+/libb2-*/**/*.lo
+/libb2-*/**/*.o
+/libb2-*/**/.deps/
+/libb2-*/**/.libs/
+/libb2-*/**/Makefile
+/libb2-*/**/config.h
+/libb2-*/**/config.log
+/libb2-*/**/config.status
+/libb2-*/**/libtool
+/libb2-*/**/stamp-*

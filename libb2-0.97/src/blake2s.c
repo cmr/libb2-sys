@@ -51,7 +51,7 @@ static inline __m128i _mm_set_epi64x( const uint64_t u1, const uint64_t u0 )
 
 #include "blake2s-round.h"
 
-ALIGN( 64 ) static const uint32_t blake2s_IV[8] =
+static const uint32_t blake2s_IV[8] =
 {
   0x6A09E667UL, 0xBB67AE85UL, 0x3C6EF372UL, 0xA54FF53AUL,
   0x510E527FUL, 0x9B05688CUL, 0x1F83D9ABUL, 0x5BE0CD19UL

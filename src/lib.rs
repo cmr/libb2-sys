@@ -15,7 +15,6 @@ pub const BLAKE2B_SALTBYTES: libc::c_uint = 16;
 pub const BLAKE2B_PERSONALBYTES: libc::c_uint = 16;
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2s_param {
     pub digest_length: u8,
     pub key_length: u8,
@@ -30,7 +29,6 @@ pub struct blake2s_param {
 }
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2s_state {
     pub h: [u32; 8usize],
     pub t: [u32; 2usize],
@@ -42,7 +40,6 @@ pub struct blake2s_state {
 }
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2b_param {
     pub digest_length: u8,
     pub key_length: u8,
@@ -58,7 +55,6 @@ pub struct blake2b_param {
 }
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2b_state {
     pub h: [u64; 8usize],
     pub t: [u64; 2usize],
@@ -70,7 +66,6 @@ pub struct blake2b_state {
 }
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2sp_state {
     pub S: [[blake2s_state; 1usize]; 8usize],
     pub R: [blake2s_state; 1usize],
@@ -80,7 +75,6 @@ pub struct blake2sp_state {
 }
 
 #[repr(C)]
-#[derive(Copy)]
 pub struct blake2bp_state {
     pub S: [[blake2b_state; 1usize]; 4usize],
     pub R: [blake2b_state; 1usize],
