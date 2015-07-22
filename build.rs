@@ -1,5 +1,6 @@
 use std::path::*;
 use std::process::*;
+use std::thread::sleep_ms;
 use std::env;
 use std::io::*;
 
@@ -19,6 +20,12 @@ fn main() {
 
     let src = PathBuf::from(&env::var("CARGO_MANIFEST_DIR").unwrap()).join("libb2-0.97");
     let dst = PathBuf::from(&env::var("OUT_DIR").unwrap());
+
+    // Avoid trying to rebuild the generated files when checked out from git
+    run(Command::new("touch").arg(src.join("aclocal.m4")), "touch");
+    sleep_ms(1000);
+    run(Command::new("touch").arg(src.join("Makefile.in")), "touch");
+    run(Command::new("touch").arg(src.join("configure")), "touch");
 
     run(Command::new("./configure").arg("--prefix").arg(&dst).current_dir(&src), "configure?");
     run(Command::new("make").current_dir(&src), "make");
